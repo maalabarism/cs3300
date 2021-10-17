@@ -1,0 +1,7 @@
+{
+  "name": "cs3300",
+  "private": true,
+  "dependencies": {
+    "lsof": "^0.1.0"
+  }
+}
