@@ -47,6 +47,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.7'
   gem 'capybara'
+  gem 'devise'
 end
 
 group :development do
