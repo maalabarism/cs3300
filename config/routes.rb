@@ -6,5 +6,6 @@ end
 Rails.application.routes.draw do
   devise_for :users
   root "projects#index"
+  root to: 'home#index'# maybe need to remove this, obtained from devise guide.
   resources :projects
 end

@@ -1,6 +1,13 @@
+class PostsControllerTest < ActionController::TestCase
+  include Devise::Test::IntegrationHelpers # Rails >= 5
+end
+class PostsTests < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+end
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+
   # GET /projects or /projects.json
   def index
     @projects = Project.all
@@ -9,6 +16,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
+    
   end
 
   # GET /projects/new

@@ -4,7 +4,7 @@ RSpec.describe Project, type: :model do
   context "validations tests" do
     it "ensures the title is present" do
       project = Project.new(description: "Content of the description")
-      exp ect(project.valid?).to eq(false)
+      expect(project.valid?).to eq(false)
     end
 
     it "ensures the description is present" do
