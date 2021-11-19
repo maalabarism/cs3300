@@ -8,10 +8,27 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+# Add these after require 'rspec/rails'
+require 'devise'
+require_relative 'support/controller_macros'
+# ...
+#RSpec.configure do |config|
+    
+  # ...
+
+  # Add these
+  #config.include Devise::Test::ControllerHelpers, :type => :controller
+  #config.include FactoryBot::Syntax::Methods
+  #config.extend ControllerMacros, :type => :controller
+#end
 #The following is for devise testing. 
 RSpec.configure do |config|
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Devise::Test::IntegrationHelpers, :type => :feature
+  #config.include Devise::Test::ControllerHelpers, type: :view
+  #config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include FactoryBot::Syntax::Methods
+  config.extend ControllerMacros, :type => :controller
 end
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'simplecov'
