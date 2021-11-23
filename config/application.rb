@@ -2,7 +2,7 @@ require_relative 'boot'
 
 require 'rails/all'
 
-require 'device'
+#require 'device'
 
 #config.assets.initialize_on_precompile = false
 
