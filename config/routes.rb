@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   root "projects#index"
   #root to: 'home#index'# maybe need to remove this, obtained from devise guide.
   resources :projects
+  #get 'sign_in', to: 'projects#sign_in'
 end

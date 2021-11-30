@@ -31,7 +31,6 @@ gem 'jbuilder', '~> 2.5'
 group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment
   gem 'rails_12factor'
-  gem 'bootstrap', '~> 4.6.1'
   #gem 'devise'
 end
 # Use ActiveStorage variant
@@ -51,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'capybara'
   gem 'devise'
+  gem 'bootstrap', '~> 4.6.1'
 end
 
 group :development do
