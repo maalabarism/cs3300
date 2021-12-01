@@ -14,3 +14,19 @@
  *= require_tree .
  *= require_self
  */
+ .flexBox {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.containerWidth {
+    width:300px;
+    min-height:200px;
+}   
+.container{
+    background-color: #42f5aa;
+}
+.container2{
+    background-color:peachpuff;
+}

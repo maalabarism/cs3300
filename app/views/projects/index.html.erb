@@ -1,37 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Portfolio</h1>
+<div class="container rounded">
 <h2>About</h2>
-<div class="container">
-<p>Hello my name is Stefano Signorelli, I am a Computer Engineering student at UCCS.
+<p style="font-size: 1.2em">Hello my name is Stefano Signorelli, I am a Computer Engineering student at UCCS.
  This website is where students can share their projects to the public once they sign in to the webpage.
   Right now the website has poems featuring a WW1 british soldier, Wilfred Owens, which are being displayed as projects.
-<a class="btn btn-primary btn-lg" href="#">Learn More</a>
-
 </p>
 </div>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="flexBox">
+<% @projects.each do |project| %>
+  <div class="container2 containerWidth rounded">
+    <h3><%= project.title %></h3>
+    <%= project.description %>
+    <br>
+    <% if user_signed_in? %>
+    <%= link_to 'Show', project %>
+    <%= link_to 'Edit', edit_project_path(project) %>
+    <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  </tbody>
-</table>
-
+    </div>
+<% end %>
+</div>
 <br>
-
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, class: "btn btn-primary btn-lg" %>
