@@ -20,12 +20,17 @@
     justify-content: space-evenly;
     gap: 20px;
 }
+.marginYes {
+    margin-bottom: 10px;
+}
 .containerWidth {
     width:300px;
-    min-height:200px;
+    min-height:180px;
 }   
 .container{
     background-color: #42f5aa;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 .container2{
     background-color:peachpuff;

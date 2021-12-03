@@ -1,17 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Portfolio</h1>
+<h1 style="margin-left:20px;">Portfolio</h1>
 <div class="container rounded">
 <h2>About</h2>
 <p style="font-size: 1.2em">Hello my name is Stefano Signorelli, I am a Computer Engineering student at UCCS.
  This website is where students can share their projects to the public once they sign in to the webpage.
-  Right now the website has poems featuring a WW1 british soldier, Wilfred Owens, which are being displayed as projects.
+  Right now the website has poem excerpts by a WW1 british soldier, Wilfred Owens, which are being displayed as projects.
 </p>
-</div>
+<% if user_signed_in? %>
+<%= link_to 'New Project', new_project_path, class: "btn btn-primary btn-lg marginYes" %>
+<%end%>
+</div> 
 
 <div class="flexBox">
 <% @projects.each do |project| %>
-  <div class="container2 containerWidth rounded">
+  <div class="container2 marginYes containerWidth rounded">
     <h3><%= project.title %></h3>
     <%= project.description %>
     <br>
@@ -23,5 +26,3 @@
     </div>
 <% end %>
 </div>
-<br>
-<%= link_to 'New Project', new_project_path, class: "btn btn-primary btn-lg" %>

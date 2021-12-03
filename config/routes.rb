@@ -6,7 +6,7 @@ end
 Rails.application.routes.draw do
   devise_for :users
   root "projects#index"
-  #root to: 'home#index'# maybe need to remove this, obtained from devise guide.
+  root to: 'home#index'# maybe need to remove this, obtained from devise guide.
   resources :projects
   #get 'sign_in', to: 'projects#sign_in'
 end
